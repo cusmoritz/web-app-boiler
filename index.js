@@ -15,7 +15,7 @@ const morgan = require("morgan");
 // Requires client, which is a Postgres function. This will connect from whereever file it is located.
 const {client} = require("......");
 // Router is called from the server-side API, if there is one. 
-const apiRouter = require("./api/index");
+const router = require("./api/index");
 // Path is used during deploying to Render, to send files after React is built.
 const path = require('path');
 
