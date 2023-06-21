@@ -26,7 +26,7 @@ router.use(cors());
 
 
 // This function will console.log all of our API calls, which can help debugging.
-apiRouter.use((request, response, next) => {
+router.use((request, response, next) => {
     console.log('request.method: ', request.method);
     console.log('request.url: ', request.url);
     // next() moves the response to the next appropriate call.
@@ -34,7 +34,7 @@ apiRouter.use((request, response, next) => {
 });
 
 // This call will tell us if our server is running.
-apiRouter.get('/health', async (request, response, next) => {
+router.get('/health', async (request, response, next) => {
     try {
         response.send('All good!')
     } catch (error) {
@@ -42,11 +42,10 @@ apiRouter.get('/health', async (request, response, next) => {
     }
 });
 
-/*
 
-This is where your server calls will go, or other routers for /users /posts etc.
+//This is where your server calls will go, or other routers for /users /posts etc.
+// router.use('/users', userRouter); // for example
 
-*/
 
 // You will need the router somewhere else, undoubtedly.
 module.exports = router;
